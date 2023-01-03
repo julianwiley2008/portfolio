@@ -1,0 +1,19 @@
+import data_remote_us_20202022
+
+def get_state(data_remote_us_20202022, state):
+    query = "SELECT region || ' ' || init FROM State WHERE state_id=?;"
+
+    connection = data_remote_us_20202022.connect(data_remote_us_20202022)
+    cursor = connection.cursor()
+    cursor.execute(query, [person_id])
+    results = cursor.fetchall()
+    cursor.close()
+    connection.close()
+
+top_10_states = [SELECT "state" WHERE "RSV_rate" is max("rsv_rates"_);]
+for rsv_num in top_10_states
+  print (rsv_num)
+
+    return results[0][0]
+
+print("The top 10 states with remote workers in 2020-2022:", get_state('data_remote_us_20202022.db', 'state'))
